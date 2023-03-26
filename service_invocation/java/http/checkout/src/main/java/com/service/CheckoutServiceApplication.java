@@ -33,6 +33,8 @@ public class CheckoutServiceApplication {
 					.build();
 
 			HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+			System.out.println("Order response status: "+ response.statusCode());
+			System.out.println("Order response body: "+ response.body());
 			System.out.println("Order passed: "+ orderId);
 			TimeUnit.MILLISECONDS.sleep(1000);
 		}
